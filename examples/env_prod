@@ -1,0 +1,11 @@
+# .env.production
+NODE_ENV=production
+DEBUG=false
+PORT=8080
+DATABASE_URL=postgres://produser@prod.db.example.com:5432/myapp_prod
+REDIS_URL=rediss://prod.redis.example.com:6379
+SECRET_KEY=${SECRET_KEY}
+LOG_LEVEL=INFO
+ALLOWED_ORIGINS=https://app.example.com
+ENABLE_MONITORING=true
+MAX_WORKERS=4
