@@ -1,0 +1,31 @@
+# ConfigDiff Example A - Development Environment
+app:
+  name: myapp
+  version: 1.0.0
+  debug: true
+  port: 3000
+  host: localhost
+
+database:
+  type: postgres
+  host: localhost
+  port: 5432
+  name: myapp_dev
+  user: dev
+  password: dev123
+  pool_size: 5
+
+cache:
+  enabled: true
+  ttl: 3600
+  backend: redis
+
+logging:
+  level: DEBUG
+  format: detailed
+  output: stdout
+
+features:
+  auth: true
+  beta_features: false
+  max_upload_size: 10485760
