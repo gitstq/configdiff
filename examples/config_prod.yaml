@@ -1,0 +1,35 @@
+# ConfigDiff Example B - Production Environment
+app:
+  name: myapp
+  version: 2.0.0
+  debug: false
+  port: 8080
+  host: 0.0.0.0
+
+database:
+  type: postgres
+  host: prod.db.example.com
+  port: 5432
+  name: myapp_prod
+  user: produser
+  password: ${DB_PASSWORD}
+  pool_size: 20
+
+cache:
+  enabled: true
+  ttl: 7200
+  backend: redis
+
+logging:
+  level: INFO
+  format: json
+  output: file
+
+features:
+  auth: true
+  beta_features: true
+  max_upload_size: 52428800
+
+monitoring:
+  enabled: true
+  endpoint: https://metrics.example.com
