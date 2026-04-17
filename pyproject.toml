@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "configdiff"
+version = "1.0.0"
+description = "ConfigDiff - Multi-format configuration file diff and merge tool"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "gitstq", email = "gitstq@users.noreply.github.com"}]
+keywords = ["diff", "config", "yaml", "json", "toml", "env", "compare", "merge"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+yaml = ["pyyaml"]
+toml = ["tomli"]
+dev = ["pytest>=7.0"]
+all = ["pyyaml", "tomli", "pytest>=7.0"]
+
+[project.scripts]
+configdiff = "configdiff.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gitstq/configdiff"
+Repository = "https://github.com/gitstq/configdiff"
+Issues = "https://github.com/gitstq/configdiff/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["configdiff*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"
