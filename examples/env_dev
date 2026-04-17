@@ -1,0 +1,9 @@
+# .env.development
+NODE_ENV=development
+DEBUG=true
+PORT=3000
+DATABASE_URL=postgres://localhost:5432/myapp_dev
+REDIS_URL=redis://localhost:6379
+SECRET_KEY=dev_secret_key_12345
+LOG_LEVEL=DEBUG
+ALLOWED_ORIGINS=http://localhost:3000
